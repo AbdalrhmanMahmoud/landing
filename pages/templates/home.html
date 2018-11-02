@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+    <!-- styling the nave dinamic from admin panle -->
+      <style>
+        {% block styles %}
+          {% if object.nav_color != "#000" %}
+            .bg-light {background-color: {{ object.nav_color }} !important}
+          {% endif %}
+ 
+        {% endblock %}
+      </style>
+
+
+     <!-- start_body  -->
+     {% block body %}
+       <!-- controle in navebare -->
+        {% if object.show_nav %}
+           {% include 'layout/nave.html' %}
+        {% endif %}
+
+             <!--change layout -->
+        {% if object.layout == "stacked" %}
+          {% include 'layout/stacked.html'  %}
+        {% elif object.layout == "classic" %}
+          {% include 'layout/classic.html'  %}
+        {% else %}
+          {% include 'layout/stander.html'  %}
+        {% endif %}
+
+
+
+{% endblock %}
+
+
+
+
+

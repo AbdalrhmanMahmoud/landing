@@ -1,0 +1,41 @@
+<!-- stacked layout page  -->
+  <div class="container">
+    <div class="h3 text-warning"> now you see Our  <strong>{{ object.layout }}</strong> view</div>  
+    <div class="row">
+      <article class="col-md-9 offset-md-2 col-sm-12 " >
+          <h1>{{ object.title }}</h1>
+          <h2>{{ object.small_heading }}</h2>
+          <p class="lead text-left">
+            {{ object.head_description | linebreaks}} 
+          </p>
+              <!-- controle in button  -->
+          {% if head_bttn_url  %}
+              <a href="{{ head_bttn_url }}"> {{ head_bttn }}</a>
+          {% endif %}
+        </article>
+     </div>
+  </div>
+<!-- adding vidio-->
+  <div class="container">
+      <div class="row justify-content-md-center">
+          <div class="col align-self-center">
+            <!-- <h1 class="text-center">my video </h1> -->
+            <div class="embed-responsive embed-responsive-21by9">
+              {{ object.video_embed|safe }}
+            </div>
+          </div>
+        <hr>
+      </div>
+  </div>
+
+  <!-- newsletter section -->
+  <div class="container my__form text-center">
+      <div class="row justify-content-md-center">
+        {% include 'layout/form.html' %}
+      </div>
+  </div>
+<!--body page -->
+<div class="container">
+  <!-- this part com dirct from control panle  -->
+  {{ object.page_content | safe}}
+</div>

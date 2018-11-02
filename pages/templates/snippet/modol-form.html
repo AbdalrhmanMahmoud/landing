@@ -1,0 +1,22 @@
+          <form class="join-form" method="post ">{% csrf_token %}
+                <!-- show errorrs -->
+                <div class="join-form-alert alert alert-warning alert-dismissible fade show"  style="display: none;" role="alert">
+
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                   <span class="join-form-error "></span>
+
+                </div >
+            
+<!--mb-3 my_filed  -->
+                <div class="input-group  ">
+                    <!-- {{ filed }} -->
+                  <input class="form-control" type="email" name="email" placeholder="your email">
+                  <span class="input-group-btn">
+                    <input type="submit" value="Join" class="btn btn-primary" />
+                  </span>
+                </div>
+
+
+          </form>
