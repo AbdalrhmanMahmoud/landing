@@ -4,15 +4,14 @@
 <div class="container">
     <div class="h3 text-warning"> now you see Our  <strong>{{ object.layout }}</strong> view</div>  
 
-    <div class="row text-center justify-content-md-center">
+    <div class="row  justify-content-md-center">
         <div class="col-sm-12 col-md-8">
             <h1>{{ object.title }}</h1>
             <p class="lead">
                 {{ object.head_description | linebreaks}} 
-              </p><br>
-              <div class="embed-responsive embed-responsive-21by9">
-                  {{ object.video_embed|safe }}
-              </div>
+              </p><br>          <a href="{{ object.head_bttn_url }}" class="h3 p-2 m-2 text-light bg-primary rounded" > {{ object.head_bttn }} </a>          
+
+
         </div>
     </div>
     <!-- join form -->
